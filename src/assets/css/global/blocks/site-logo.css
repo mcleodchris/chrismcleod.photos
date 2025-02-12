@@ -4,3 +4,7 @@
   font-size: var(--size-step-0);
   text-decoration: none;
 }
+.logo svg {
+  fill: var(--color-pink);
+  block-size: var(--size-step-0);
+}

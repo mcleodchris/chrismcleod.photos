@@ -3,30 +3,34 @@ layout: base
 schema: BlogPosting
 ---
 
-<article class="region" style="--region-space-top: var(--space-xl-2xl)">
+<article class="region h-entry" style="--region-space-top: var(--space-xl-2xl)">
   <div class="wrapper flow prose">
-    <h1 class="gradient-text">{{ title }}</h1>
 
     {% if image %}
       <!-- image -->
-      {% image image, alt or title, credit, "eager", "feature" %}
+      {% image image, alt or title, credit, "eager", "u-photo" %}
     {% endif %}
 
     <p class="meta | cluster gutter-xs-s">
+      <!-- author -->
+      <a href="{{meta.author.website}}" rel="me" class="h-card u-url u-author">{{meta.author.name}}</a>
       <!-- date -->
       {% set definedDate = date %} {% include "partials/date.njk" %}
       {%
         if tags.length >
         1
       %}
+      <span>
         <!-- tags -->
         {% for tag in tags %}{% if tag != "posts" %}
-          <a class="button" href="/tags/{{ tag }}" data-small-button> {{ tag }} </a>
+          <a class="button p-category" href="/tags/{{ tag }}" data-small-button> {{ tag }} </a>
         {% endif %}{% endfor %}
+      </span>
       {% endif %}
+
     </p>
 
-    {{ content | safe }}
+    <div class="p-content">{{ content | safe }}</div>
     {% include 'partials/edit-on.njk' %}
   </div>
 

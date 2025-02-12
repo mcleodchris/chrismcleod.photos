@@ -22,7 +22,7 @@ export const imageShortcode = async (
   formats = ['avif', 'webp', 'jpeg']
 ) => {
   // Prepend "./src" if not present
-  if (!src.startsWith('./src')) {
+  if (!src.startsWith('./src') && !src.startsWith('http')) {
     src = `./src${src}`;
   }
 

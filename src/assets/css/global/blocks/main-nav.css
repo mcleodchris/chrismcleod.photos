@@ -125,6 +125,8 @@
   --nav-item-decoration-color: transparent;
 }
 
+
+
 @media screen(navigation) {
   .mainnav {
     --nav-position: static;
@@ -175,4 +177,37 @@ assumes that the button doesn’t exist without JS, making the list the first ch
 /* make menu wrap without drawer */
 .mainnav:has(ul:first-child) {
   --nav-position: relative;
+}
+
+/* Change border-color for the active page */
+.mainnav ul:first-child [aria-current='page'], .mainnav ul:first-child [data-state='active'] {
+  --nav-item-text-color: var(--color-text);
+  --nav-item-decoration-color: var(--color-text);
+}
+.mainnav li:nth-of-type(7n+1) a {
+  --color-text: var(--color-red);
+}
+
+.mainnav li:nth-of-type(7n+2) a {
+  --color-text: var(--color-peach);
+}
+
+.mainnav li:nth-of-type(7n+3) a {
+  --color-text: var(--color-yellow);
+}
+
+.mainnav li:nth-of-type(7n+4) a {
+  --color-text: var(--color-green);
+}
+
+.mainnav li:nth-of-type(7n+5) a {
+  --color-text: var(--color-sky);
+}
+
+.mainnav li:nth-of-type(7n+6) a {
+  --color-text: var(--color-lavender);
+}
+
+.mainnav li:nth-of-type(7n+7) a {
+  --color-text: var(--color-mauve);
 }

@@ -1,5 +1,8 @@
 {
   "layout": "post",
   "tags": "posts",
-  "permalink": "/blog/{{ title | slugify }}/index.html"
+  "permalink": "/pics/{{ page.date | formatDate('YYYY/MM/DD') }}/{{page.fileSlug}}/index.html",
+  "eleventyComputed": {
+    "title": "Photo posted: {{ page.date | formatDate('MMMM D, YYYY') }}"
+  }
 }

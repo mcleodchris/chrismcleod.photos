@@ -104,3 +104,90 @@
 .button[data-button-radius='hard'] {
   --button-radius: 0;
 }
+
+
+
+/* Colour variants */
+.button:not([data-ghost-button]):nth-of-type(7n + 1) {
+  --button-color: var(--color-red);
+  --button-border-color: var(--color-red);
+  --button-bg: var(--color-bg);
+}
+
+.button:not([data-ghost-button]):nth-of-type(7n + 1):hover,
+.button:not([data-ghost-button]):nth-of-type(7n + 1)[aria-current='page'] {
+  --button-color: var(--color-bg);
+  --button-bg: var(--color-red);
+}
+
+.button:not([data-ghost-button]):nth-of-type(7n + 2) {
+  --button-color: var(--color-peach);
+  --button-border-color: var(--color-peach);
+  --button-bg: var(--color-bg);
+}
+
+.button:not([data-ghost-button]):nth-of-type(7n + 2):hover,
+.button:not([data-ghost-button]):nth-of-type(7n + 2)[aria-current='page'] {
+  --button-color: var(--color-bg);
+  --button-bg: var(--color-peach);
+}
+
+.button:not([data-ghost-button]):nth-of-type(7n + 3) {
+  --button-color: var(--color-yellow);
+  --button-border-color: var(--color-yellow);
+  --button-bg: var(--color-bg);
+}
+
+.button:not([data-ghost-button]):nth-of-type(7n + 3):hover,
+.button:not([data-ghost-button]):nth-of-type(7n + 3)[aria-current='page'] {
+  --button-color: var(--color-bg);
+  --button-bg: var(--color-yellow);
+}
+
+.button:not([data-ghost-button]):nth-of-type(7n + 4) {
+  --button-border-color: var(--color-green);
+  --button-color: var(--color-green);
+  --button-bg: var(--color-bg);
+}
+
+.button:not([data-ghost-button]):nth-of-type(7n + 4):hover,
+.button:not([data-ghost-button]):nth-of-type(7n + 4)[aria-current='page'] {
+  --button-color: var(--color-bg);
+  --button-bg: var(--color-green);
+}
+
+.button:not([data-ghost-button]):nth-of-type(7n + 5) {
+  --button-color: var(--color-sky);
+  --button-border-color: var(--color-sky);
+  --button-bg: var(--color-bg);
+}
+
+.button:not([data-ghost-button]):nth-of-type(7n + 5):hover,
+.button:not([data-ghost-button]):nth-of-type(7n + 5)[aria-current='page'] {
+  --button-color: var(--color-bg);
+  --button-bg: var(--color-sky);
+}
+
+.button:not([data-ghost-button]):nth-of-type(7n + 6) {
+  --button-color: var(--color-lavender);
+  --button-border-color: var(--color-lavender);
+  --button-bg: var(--color-bg);
+}
+
+.button:not([data-ghost-button]):nth-of-type(7n + 6):hover,
+.button:not([data-ghost-button]):nth-of-type(7n + 6)[aria-current='page'] {
+  --button-color: var(--color-bg);
+  --button-bg: var(--color-lavender);
+}
+
+.button:not([data-ghost-button]):nth-of-type(7n + 7) {
+  --button-color: var(--color-mauve);
+  --button-border-color: var(--color-mauve);
+  --button-bg: var(--color-bg);
+}
+
+.button:not([data-ghost-button]):nth-of-type(7n + 7):hover,
+.button:not([data-ghost-button]):nth-of-type(7n + 7)[aria-current='page'] {
+  --button-color: var(--color-bg);
+  --button-bg: var(--color-mauve);
+}

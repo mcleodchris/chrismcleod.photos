@@ -1,0 +1,84 @@
+/* Colour variants */
+.taglist li:nth-of-type(7n + 1) .button {
+    --button-color: var(--color-red);
+    --button-border-color: var(--color-red);
+    --button-bg: var(--color-bg);
+}
+
+.taglist li:nth-of-type(7n + 1) .button:hover,
+.taglist li:nth-of-type(7n + 1) .button[aria-current='page'] {
+    --button-color: var(--color-bg);
+    --button-bg: var(--color-red);
+}
+
+.taglist li:nth-of-type(7n + 2) .button {
+    --button-color: var(--color-peach);
+    --button-border-color: var(--color-peach);
+    --button-bg: var(--color-bg);
+}
+
+.taglist li:nth-of-type(7n + 2) .button:hover,
+.taglist li:nth-of-type(7n + 2) .button[aria-current='page'] {
+    --button-color: var(--color-bg);
+    --button-bg: var(--color-peach);
+}
+
+.taglist li:nth-of-type(7n + 3) .button {
+    --button-color: var(--color-yellow);
+    --button-border-color: var(--color-yellow);
+    --button-bg: var(--color-bg);
+}
+
+.taglist li:nth-of-type(7n + 3) .button:hover,
+.taglist li:nth-of-type(7n + 3) .button[aria-current='page'] {
+    --button-color: var(--color-bg);
+    --button-bg: var(--color-yellow);
+}
+
+.taglist li:nth-of-type(7n + 4) .button {
+    --button-border-color: var(--color-green);
+    --button-color: var(--color-green);
+    --button-bg: var(--color-bg);
+}
+
+.taglist li:nth-of-type(7n + 4) .button:hover,
+.taglist li:nth-of-type(7n + 4) .button[aria-current='page'] {
+    --button-color: var(--color-bg);
+    --button-bg: var(--color-green);
+}
+
+.taglist li:nth-of-type(7n + 5) .button {
+    --button-color: var(--color-sky);
+    --button-border-color: var(--color-sky);
+    --button-bg: var(--color-bg);
+}
+
+.taglist li:nth-of-type(7n + 5) .button:hover,
+.taglist li:nth-of-type(7n + 5) .button[aria-current='page'] {
+    --button-color: var(--color-bg);
+    --button-bg: var(--color-sky);
+}
+
+.taglist li:nth-of-type(7n + 6) .button {
+    --button-color: var(--color-lavender);
+    --button-border-color: var(--color-lavender);
+    --button-bg: var(--color-bg);
+}
+
+.taglist li:nth-of-type(7n + 6) .button:hover,
+.taglist li:nth-of-type(7n + 6) .button[aria-current='page'] {
+    --button-color: var(--color-bg);
+    --button-bg: var(--color-lavender);
+}
+
+.taglist li:nth-of-type(7n + 7) .button {
+    --button-color: var(--color-mauve);
+    --button-border-color: var(--color-mauve);
+    --button-bg: var(--color-bg);
+}
+
+.taglist li:nth-of-type(7n + 7) .button:hover,
+.taglist li:nth-of-type(7n + 7) .button[aria-current='page'] {
+    --button-color: var(--color-bg);
+    --button-bg: var(--color-mauve);
+}
