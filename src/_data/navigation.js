@@ -1,12 +1,22 @@
+import { author } from "./meta.js";
+
 export default {
   top: [
     {
-      text: 'Photos',
-      url: '/pics/'
+      text: 'Images',
+      url: '/images/'
+    },
+    {
+      text: 'Discover',
+      url: '/discover/'
     },
     {
       text: 'Blog',
-      url: '/blog/'
+      url: author.website
+    },
+    {
+      text: 'Follow',
+      url: '/follow/'
     }
   ],
   bottom: [
