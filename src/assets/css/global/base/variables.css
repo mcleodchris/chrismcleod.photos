@@ -58,15 +58,15 @@
   --color-sapphire: var(--color-machiatto-sapphire);
 
   --color-text: var(--color-text);
-    --color-bg: var(--color-base);
+  --color-bg: var(--color-base);
 
-    --color-primary: var(--color-pink);
-    --color-secondary: var(--color-peach);
-    --color-tertiary: var(--color-mauve);
+  --color-primary: var(--color-peach);
+  --color-secondary: var(--color-sky);
+  --color-tertiary: var(--color-mauve);
 
-    --color-text-accent: var(--color-subtext1);
-    --color-bg-accent: var(--color-surface0);
-    --color-bg-accent-2: var(--color-surface1);
+  --color-text-accent: var(--color-subtext1);
+  --color-bg-accent: var(--color-surface0);
+  --color-bg-accent-2: var(--color-surface1);
 }
 
 /* Light theme */

@@ -1,11 +1,7 @@
-email: hola@eyourmail.lol
-address: |-
-  Organization name
-  Your street
-  12345, city
-  Tel: +34 928231911
+email: feedback@chrismcleod.dev
+address: 
 platforms:
-  github: 'https://github.com/madrilene/eleventy-excellent'
-  mastodon: 'https://front-end.social/@lene'
-  bluesky: 'https://bsky.app/profile/lenesaile.com'
+  github: 'https://github.com/mcleodchris'
+  mastodon: 'https://social.lol/@chrisplusplus'
+  bluesky: 'https://bsky.app/profile/chrismcleod.dev'
   kofi: 'https://ko-fi.com/lenesaile'

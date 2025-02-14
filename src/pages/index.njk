@@ -4,8 +4,8 @@ permalink: /index.html
 title: 'Eleventy Excellent'
 description: 'Eleventy starter using modern CSS, fluid type, fluid spacing, flexible layout and progressive enhancement.'
 blog:
-  title: 'Blog'
-  intro: "I'm showing the last 4 blog posts, but there might be more!"
+  title: 'Recent Posts'
+  intro: "I'm showing the last 6 posts, but [there are more](/images/)!"
 ---
 
 <div class="wrapper">
@@ -41,16 +41,16 @@ blog:
       <!-- blog intro text is optional. -->
 
       {% if blog.intro %}
-        <p>{{ blog.intro }}</p>
+        {{ blog.intro | markdownFormat | safe }}
       {% endif %}
 
       <div class="feature |  region region-space-l">
-        <custom-masonry layout="50-50">
+        <custom-masonry layout="thirds">
           <!-- loop posts -->
           {% set itemList = collections.allPosts %}
-					{% asyncEach item in itemList.slice(0, 4) %}
+					{% asyncEach item in itemList.slice(0, 6) %}
 						{% set definedDate = item.date %}
-						{# {% include "partials/card-blog.njk" %} #}
+						{% include "partials/card-blog.njk" %}
 					{% endeach %}
         </custom-masonry>
       </div>

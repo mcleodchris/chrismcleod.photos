@@ -38,7 +38,7 @@ custom-card > :is(picture, figure) {
 custom-card img {
   max-inline-size: var(--max-img-width, 100%);
   block-size: auto;
-  aspect-ratio: auto;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: center;
 }
