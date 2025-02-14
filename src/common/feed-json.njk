@@ -20,11 +20,12 @@ excludeFromSitemap: true
 		{%- for post in postslist | reverse -%}
 		{%- set absolutePostUrl = post.url | absoluteUrl(meta.url) -%}
     {
-      "id": "{{ absolutePostUrl }}",
+      "id": "{{ post.data.id }}",
       "url": "{{ absolutePostUrl }}",
       "title": "{{ post.data.title }}",
       "content_html": {% if post.content %}{{ post.content | renderTransforms(post.data.page, metadata.base) | dump | safe }}{% else %}""{% endif %},
-      "date_published": "{{ post.date | dateToRfc3339 }}"
+      "date_published": "{{ post.date | dateToRfc3339 }}",
+      "attachments": [{ "href": "{{post.data.image}}"}]
     }
     {% if not loop.last %},{% endif %}
     {%- endfor %}

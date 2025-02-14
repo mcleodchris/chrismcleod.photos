@@ -1,16 +1,16 @@
 ---
 layout: base
-title: Images
+title: Photos and the like
 description: 'All photo posts can be found here'
 pagination:
   data: collections.allPosts
-  size: 8
+  size: 9
 permalink: '/images/{% if pagination.pageNumber >=1 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}index.html'
 ---
 
 <article class="wrapper">
-  <header class="full | section">
-      <h1 class="text-center" style="color: var(--color-light); --region-space-top: var(--space-xl-2xl)">{{ title }}</h1>
+  <header class="full | section" style="margin-top: var(--space-xl-2xl); margin-bottom: var(--space-xl-2xl)">
+      <h1 class="text-center" >{{ title }}</h1>
   </header>
 
   <custom-masonry layout="thirds">

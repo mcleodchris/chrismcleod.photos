@@ -8,7 +8,7 @@ export default {
     },
     {
       text: 'Discover',
-      url: '/discover/'
+      url: '/tags/'
     },
     {
       text: 'Blog',

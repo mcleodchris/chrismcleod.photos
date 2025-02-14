@@ -1,7 +1,7 @@
 ---
 layout: base
 permalink: /index.html
-title: 'Eleventy Excellent'
+title: 'A Humble Photoblog'
 description: 'Eleventy starter using modern CSS, fluid type, fluid spacing, flexible layout and progressive enhancement.'
 blog:
   title: 'Recent Posts'
@@ -9,31 +9,19 @@ blog:
 ---
 
 <div class="wrapper">
-  <header class="full | section" style="--spot-color: var(--color-primary)">
-    <div class="section__inner flow region">
+  <header class="full | section" style="margin-top: var(--space-xl-2xl);">
       <h1 class="text-center" style="color: var(--color-light);">{{ title }}</h1>
-    </div>
-
-    {% svg "divider/waves", null, "seperator" %}
   </header>
-
-  <article class="full | region">
+  <section class="full | region"> 
     <div class="wrapper flow prose">
-      <h2 id="an-eleventy-starter">An Eleventy starter</h2>
-      <p>
-        Built around a CSS workflow that emphasizes guiding browser styling rather than micromanaging it. It
-        incorporates progressive enhancement, fluid type and spacing, and utilizes modern CSS features for
-        layout. The goal is to develop frontends that provide a great experience across all devices,
-        connection speeds, and usage contexts.
-      </p>
-      <p>
-        <strong>This is version 4.</strong> I keep a
-        <a href="https://github.com/madrilene/eleventy-excellent/tree/v1">branch of v1</a>,
-        <a href="https://github.com/madrilene/eleventy-excellent/tree/v2">v2</a> and <a href="https://github.com/madrilene/eleventy-excellent/tree/v3">v3</a>. I  tried to <a href="/get-started/#docs-lol">document most features and methodologies</a>.
-      </p>
-      <p><strong>Have fun</strong> and let me know if you find any issues or have ideas for improvements!</p>
+      <div class=" grid--image-text h-card">
+          <h2>Photos by <span class="p-name">{{ meta.author.name }}</span></h2>
+          <img src="https://assets.chrism.cloud/chrismcleod.dev/2023/07/06_1280.png" alt="a computer-generated illustration of Chris McLeod" class="u-photo" style="--border-radius-medium: 9999px" eleventy:widths="240,480,720">
+          <p class="p-note text">Online since before some of you were born. Tired. Lead Software Developer, but I’m not allowed to talk about it. He/him/his. Scotland.</p>
+          <p class="text offset">You can find out a bit more on my <a href="https://chrismcleod.dev" class="u-url">blog</a>.</p>
+      </div>
     </div>
-  </article>
+  </section>
 
   <section class="full | region">
     <div class="wrapper flow prose">

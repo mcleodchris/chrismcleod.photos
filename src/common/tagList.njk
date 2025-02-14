@@ -9,13 +9,16 @@ eleventyComputed:
   title: '{{ meta.blog.tagSingle }}: {{ tag }}'
 ---
 
-<custom-masonry layout="50-50">
-  {% set itemList = collections[tag] | reverse %}
-  {% for item in itemList %}
-
-		{% include "partials/card-tag.njk" %}
-  {% endfor %}
-</custom-masonry>
+<div class="feature |  region region-space-l">
+  <custom-masonry layout="thirds">
+    <!-- loop posts -->
+    {% set itemList = collections[tag] | reverse %}
+    {% asyncEach item in itemList %}
+      {% set definedDate = item.date %}
+      {% include "partials/card-blog.njk" %}
+    {% endeach %}
+  </custom-masonry>
+</div>
 
 <h2 class="text-step-2">{{ meta.blog.tagMore }}</h2>
 

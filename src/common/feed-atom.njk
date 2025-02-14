@@ -21,10 +21,11 @@ excludeFromSitemap: true
       <title>{{ post.data.title }}</title>
       <link href="{{ absolutePostUrl }}" />
       <updated>{{ post.date | dateToRfc3339 }}</updated>
-      <id>{{ absolutePostUrl }}</id>
+      <id>{{ post.data.id }}</id>
       <content type="html">
 				{{ post.content | renderTransforms(post.data.page, meta.url) }}
  			</content>
+      <link rel="enclosure" href="{{post.data.image}}" />
     </entry>
   {%- endfor -%}
 </feed>

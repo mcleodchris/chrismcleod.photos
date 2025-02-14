@@ -14,7 +14,7 @@ eleventyComputed:
 <custom-masonry layout="thirds">
   {% set itemlist = collections.posts %}
   {% for item in itemlist %}
-
-		{% include "partials/card-tag.njk" %}
+    {% set definedDate = item.date %}
+		{% include "partials/card-blog.njk" %}
   {% endfor %}
 </custom-masonry>
