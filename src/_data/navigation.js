@@ -13,10 +13,6 @@ export default {
     {
       text: 'Blog',
       url: author.website
-    },
-    {
-      text: 'Follow',
-      url: '/follow/'
     }
   ],
   bottom: [
