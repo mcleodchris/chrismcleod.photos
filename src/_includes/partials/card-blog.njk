@@ -1,5 +1,5 @@
-<custom-card clickable>
-  <a href="{{ item.url | url }}" slot="image">
+<custom-card clickable class="h-entry">
+  <a href="{{ item.url | url }}" slot="image" class="u-url" rel="permalink">
     {% image item.data.image, item.data.alt or item.data.title, item.data.credit, "eager", "u-photo" %}
   </a>
   <span slot="date"> {% include "partials/date.njk" %} </span>

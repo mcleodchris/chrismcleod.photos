@@ -13,14 +13,14 @@ schema: BlogPosting
 
     <p class="meta | cluster gutter-xs-s">
       <!-- author -->
-      <a href="{{meta.author.website}}" rel="me" class="h-card u-url u-author">{{meta.author.name}}</a>
+      <a href="{{meta.author.website}}" rel="me" class="h-card u-author">{{meta.author.name}}</a>
       <!-- date -->
       {% set definedDate = date %} {% include "partials/date.njk" %}
       {%
         if tags.length >
         1
       %}
-      <span>
+      <span class="cluster>
         <!-- tags -->
         {% for tag in tags %}{% if tag != "posts" %}
           <a class="button p-category" href="/tags/{{ tag }}" data-small-button> {{ tag }} </a>
@@ -30,7 +30,7 @@ schema: BlogPosting
 
     </p>
 
-    <div class="p-content">{{ content | safe }}</div>
+    <div class="e-content">{{ content | safe }}</div>
     {% include 'partials/edit-on.njk' %}
   </div>
 
@@ -45,6 +45,11 @@ schema: BlogPosting
       alt="{{ meta.author.name }}"
     />
   </div>
+  <!-- brid.gy -->
+  <ul hidden>
+    <li><a href="https://brid.gy/publish/bluesky"></a></li>
+    <li><a href="https://brid.gy/publish/mastodon"></a></li>
+  </ul>
 </article>
 
 {%- css "local" -%}
