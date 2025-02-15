@@ -20,7 +20,7 @@ schema: BlogPosting
         if tags.length >
         1
       %}
-      <span class="cluster>
+      <span class="cluster">
         <!-- tags -->
         {% for tag in tags %}{% if tag != "posts" %}
           <a class="button p-category" href="/tags/{{ tag }}" data-small-button> {{ tag }} </a>
