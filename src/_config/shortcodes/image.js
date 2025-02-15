@@ -10,6 +10,19 @@ const stringifyAttributes = attributeMap => {
     .join(' ');
 };
 
+function getFileName(id, src, width, format, options) {
+  // id: hash of the original image
+  // src: original image path
+  // width: current width in px
+  // format: current file format
+  // options: set of options passed to the Image call
+  const path = src.split('/');
+  const filename = path.pop().split('.');
+  const name = filename[0];
+
+  return `${name}-${width}.${format}`;
+}
+
 export const imageShortcode = async (
   src,
   alt = '',
@@ -17,7 +30,7 @@ export const imageShortcode = async (
   loading = 'lazy',
   containerClass,
   imageClass,
-  widths = [650, 960, 1200],
+  widths = [320, 570, 820],
   sizes = 'auto',
   formats = ['avif', 'webp', 'jpeg']
 ) => {
@@ -26,17 +39,38 @@ export const imageShortcode = async (
     src = `./src${src}`;
   }
 
-  const metadata = await Image(src, {
-    widths: [...widths],
-    formats: [...formats],
-    urlPath: '/assets/images/',
-    outputDir: './dist/assets/images/',
-    filenameFormat: (id, src, width, format, options) => {
-      const extension = path.extname(src);
-      const name = path.basename(src, extension);
-      return `${name}-${width}w.${format}`;
-    }
+  let staticData = {};
+
+  // TODO: This should be a configuration variable somewhere
+  const cdnPath = 'https://assets.chrism.cloud/chrismcleod.dev/assets/resized';
+
+  formats.forEach(format => {
+    staticData[format] = [];
+    widths.forEach(width => {
+      const fileName = getFileName(null, src, width, format, {});
+      staticData[format].push({
+        src: `${cdnPath}/${fileName}`,
+        width,
+        format,
+        sourceType: `image/${format}`,
+        srcset: `${cdnPath}/${fileName} ${width}w`
+      });
+    });
   });
+
+  const metadata = /*process.env.ELEVENTY_PRODUCTION*/ true
+    ? staticData
+    : await Image(src, {
+        widths: [...widths],
+        formats: [...formats],
+        urlPath: '/assets/images/',
+        outputDir: './dist/assets/images/',
+        filenameFormat: (id, src, width, format, options) => {
+          const extension = path.extname(src);
+          const name = path.basename(src, extension);
+          return `${name}-${width}w.${format}`;
+        }
+      });
 
   const lowsrc = metadata.jpeg[metadata.jpeg.length - 1];
 
