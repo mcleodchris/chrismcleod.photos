@@ -9,7 +9,7 @@ eleventyComputed:
   title: '{{ meta.blog.tagSingle }}: {{ tag }}'
 ---
 
-<div class="feature |  region region-space-l">
+<div class="feature |  region region-space-l | h-feed">
   <custom-masonry layout="thirds">
     <!-- loop posts -->
     {% set itemList = collections[tag] | reverse %}

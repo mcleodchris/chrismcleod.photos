@@ -32,8 +32,8 @@ blog:
         {{ blog.intro | markdownFormat | safe }}
       {% endif %}
 
-      <div class="feature |  region region-space-l">
-        <custom-masonry layout="thirds" class="h-feed">
+      <div class="feature |  region region-space-l | h-feed">
+        <custom-masonry layout="thirds">
           <!-- loop posts -->
           {% set itemList = collections.allPosts %}
 					{% asyncEach item in itemList.slice(0, 6) %}

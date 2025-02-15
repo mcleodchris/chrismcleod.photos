@@ -167,3 +167,7 @@
 .rounded-full {
   border-radius: 9999px;
 }
+a[rel='permalink'] {
+  text-decoration: none;
+  color: var(--color-text-accent);
+}
