@@ -35,7 +35,7 @@ schema: BlogPosting
   </div>
 
   <!--  h-card infos: https://indieweb.org/authorship -->
-  <div hidden class="h-entry">
+  <div hidden>
     <a class="u-url" href="{{ page.url | url | absoluteUrl(meta.url) }}">{{ title }}</a>
     <div class="h-card">
     <a class="p-name u-url" rel="author" href="{{ meta.url }}">{{ meta.author.name }}</a>
