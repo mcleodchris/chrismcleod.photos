@@ -14,8 +14,6 @@ schema: BlogPosting
 
     <p class="meta | cluster gutter-xs-s">
       <a href="{{ page.url | url | absoluteUrl(meta.url) }}" class="u-url" rel="permalink">⌘</a>
-      <!-- author -->
-      <a href="{{meta.author.website}}" rel="me" class="h-card u-author">{{meta.author.name}}</a>
       <!-- date -->
       {% set definedDate = date %} {% include "partials/date.njk" %}
       {%
