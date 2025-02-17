@@ -25,7 +25,7 @@ excludeFromSitemap: true
       "title": "{{ post.data.title }}",
       "content_html": {% if post.content %}{{ post.content | renderTransforms(post.data.page, metadata.base) | dump | safe }}{% else %}""{% endif %},
       "date_published": "{{ post.date | dateToRfc3339 }}",
-      "attachments": [{ "href": "{{post.data.image}}"}]
+      "image": "{{post.data.image}}"
     }
     {% if not loop.last %},{% endif %}
     {%- endfor %}
