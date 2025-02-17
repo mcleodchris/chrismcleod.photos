@@ -99,3 +99,67 @@ export const imageShortcode = async (
     ? `<figure slot="image"${containerClass ? ` class="${containerClass}"` : ''}>${pictureElement}<figcaption>${caption}</figcaption></figure>`
     : `<picture slot="image"${containerClass ? ` class="${containerClass}"` : ''}>${imageSources}<img ${imageAttributes}></picture>`;
 };
+
+export const indiewebImageShortCode = async (
+  src,
+  alt = '',
+  loading = 'lazy',
+  imageClass,
+  hidden = false,
+  widths = [320, 570, 820],
+  sizes = 'auto',
+) => {
+  // Prepend "./src" if not present
+  if (!src.startsWith('./src') && !src.startsWith('http')) {
+    src = `./src${src}`;
+  }
+
+  let staticData = {};
+  // TODO: This should be a configuration variable somewhere
+  const cdnPath = 'https://assets.chrism.cloud/chrismcleod.dev/assets/resized';
+
+  staticData['jpeg'] = [];
+  widths.forEach(width => {
+    const fileName = getFileName(null, src, width, 'jpeg', {});
+    staticData['jpeg'].push({
+      src: `${cdnPath}/${fileName}`,
+      width,
+      format: 'jpeg',
+      sourceType: 'image/jpeg',
+      srcset: `${cdnPath}/${fileName} ${width}w`
+    });
+  });
+
+  const metadata = /*process.env.ELEVENTY_PRODUCTION*/ true
+    ? staticData
+    : await Image(src, {
+        widths: [...widths],
+        formats: ['jpeg'],
+        urlPath: '/assets/images/',
+        outputDir: './dist/assets/images/',
+        filenameFormat: (id, src, width, format, options) => {
+          const extension = path.extname(src);
+          const name = path.basename(src, extension);
+          return `${name}-${width}w.${format}`;
+        }
+      });
+
+  const lowsrc = metadata.jpeg[metadata.jpeg.length - 1];
+
+  const imageAttributes = stringifyAttributes({
+    'src': lowsrc.url,
+    'width': lowsrc.width,
+    'height': lowsrc.height,
+    alt,
+    loading,
+    'decoding': loading === 'eager' ? 'sync' : 'async',
+    'srcset': metadata.jpeg.map(entry => entry.srcset).join(', '),
+    'sizes': sizes,
+    ...(imageClass && {class: imageClass}),
+    'eleventy:ignore': '',
+    ...(hidden ? {hidden: true} : {})
+  });
+
+  return `<img ${imageAttributes}>`;
+};
+

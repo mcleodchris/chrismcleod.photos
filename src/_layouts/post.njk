@@ -10,7 +10,7 @@ schema: BlogPosting
       {% image image, alt or title, credit, "eager" %}
     {% endif %}
     <!-- this one's for Brid.gy and the indieweb -->
-    <img class="u-photo" alt="{{alt}}" src="{{image}}" hidden loading="lazy" decoding="async" eleventy:ignore>
+    {% indiewebImage image, alt, "lazy", "u-photo", true, [320, 570, 820] %}
 
     <p class="meta | cluster gutter-xs-s">
       <a href="{{ page.url | url | absoluteUrl(meta.url) }}" class="u-url" rel="permalink">⌘</a>
@@ -39,13 +39,10 @@ schema: BlogPosting
   <!--  h-card infos: https://indieweb.org/authorship -->
   <div hidden class="h-entry">
     <a class="u-url" href="{{ page.url | url | absoluteUrl(meta.url) }}">{{ title }}</a>
+    <div class="h-card">
     <a class="p-name u-url" rel="author" href="{{ meta.url }}">{{ meta.author.name }}</a>
-    <img
-      eleventy:ignore
-      class="u-author h-card"
-      src="{{ meta.author.avatar | url | absoluteUrl(meta.url) }}"
-      alt="{{ meta.author.name }}"
-    />
+    {% indiewebImage meta.author.avatar, meta.author.name, "lazy", "u-photo", false, [320, 570, 840] %}
+    </div>
   </div>
   <!-- brid.gy -->
   <ul hidden>

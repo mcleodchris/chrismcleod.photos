@@ -16,7 +16,7 @@ blog:
     <div class="wrapper flow prose">
       <div class=" grid--image-text h-card">
           <h2>Photos by <span class="p-name">{{ meta.author.name }}</span></h2>
-          <img src="https://assets.chrism.cloud/chrismcleod.dev/2023/07/06_1280.png" alt="a computer-generated illustration of Chris McLeod" class="u-photo" style="--border-radius-medium: 9999px" eleventy:widths="240,480,720">
+          {% indiewebImage meta.author.avatar, meta.author.name, "eager", "u-photo", false, [320, 570, 820] %}
           <p class="p-note text">Online since before some of you were born. Tired. Lead Software Developer, but I’m not allowed to talk about it. He/him/his. Scotland.</p>
           <p class="text offset">You can find out a bit more on my <a href="https://chrismcleod.dev" class="u-url">blog</a>.</p>
       </div>

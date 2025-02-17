@@ -29,10 +29,11 @@ to change how empty grid tracks are handled */
     grid-auto-rows: min-content;
   }
 
-  .grid--image-text picture {
+  .grid--image-text img {
     grid-column: 1 / 2;
     grid-row: 1 / 3;
     align-self: start;
+    --border-radius-medium: 9999px
   }
 
   .grid--image-text p, .grid--image-text h2 {
