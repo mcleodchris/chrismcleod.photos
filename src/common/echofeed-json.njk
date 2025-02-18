@@ -1,0 +1,36 @@
+---
+permalink: /echofeed.json
+eleventyExcludeFromCollections: true
+excludeFromSitemap: true
+---
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "{{ meta.blog.name }}",
+  "language": "{{ meta.lang or page.lang }}",
+  "home_page_url": "{{ meta.url | addPathPrefixToFullUrl }}",
+  "feed_url": "{{ permalink | htmlBaseUrl(meta.url) }}",
+  "description": "{{ meta.blog.description }}",
+  "authors": [
+    {
+      "name": "{{ meta.author.name }}"
+    }
+  ],
+  "items": [
+		{%- set postslist = collections.posts -%}
+		{%- for post in postslist | reverse -%}
+		{%- set absolutePostUrl = post.url | absoluteUrl(meta.url) -%}
+        {% setAsync "imageHtml" -%}
+            <p>{% indiewebImage post.data.image, post.data.alt, "lazy", "u-photo" %}</p>
+        {% endsetAsync %}
+    {
+      "id": "{{ post.data.id }}",
+      "url": "{{ absolutePostUrl }}",
+      "title": "{{ post.data.title }}",
+      "content_html": {{ [imageHtml, post.content] | join | renderTransforms(post.data.page, metadata.base) | dump | safe }},
+      "date_published": "{{ post.date | dateToRfc3339 }}",
+      "image": "{{post.data.image}}"
+    }
+    {% if not loop.last %},{% endif %}
+    {%- endfor %}
+  ]
+}
