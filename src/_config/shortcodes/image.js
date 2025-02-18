@@ -83,7 +83,7 @@ export const imageShortcode = async (
     .join('\n');
 
   const imageAttributes = stringifyAttributes({
-    'src': lowsrc.url,
+    'src': lowsrc.src,
     'width': lowsrc.width,
     'height': lowsrc.height,
     alt,
@@ -147,7 +147,7 @@ export const indiewebImageShortCode = async (
   const lowsrc = metadata.jpeg[metadata.jpeg.length - 1];
 
   const imageAttributes = stringifyAttributes({
-    'src': lowsrc.url,
+    'src': lowsrc.src,
     'width': lowsrc.width,
     'height': lowsrc.height,
     alt,

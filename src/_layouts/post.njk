@@ -38,7 +38,7 @@ schema: BlogPosting
   <div hidden>
     <a class="u-url" href="{{ page.url | url | absoluteUrl(meta.url) }}">{{ title }}</a>
     <div class="h-card p-author">
-    <a class="p-name u-url" rel="author" href="{{ meta.url }}">{{ meta.author.name }}</a>
+    <a class="p-name u-url" rel="author" href="{{ meta.author.website }}">{{ meta.author.name }}</a>
     {% indiewebImage meta.author.avatar, meta.author.name, "lazy", "u-photo", false, [320, 570, 840] %}
     </div>
   </div>
