@@ -3,6 +3,6 @@
   "tags": ["posts"],
   "permalink": "/images/{{ page.date | formatDate('YYYY/MM/DD') }}/{{page.fileSlug}}/index.html",
   "eleventyComputed": {
-    "title": "Photo posted: {{ page.date | formatDate('MMMM D, YYYY') }}"
+    "title": "Photo posted: {{ page.date | formatDate('MMMM D, YYYY, h:mma') }}"
   }
 }
