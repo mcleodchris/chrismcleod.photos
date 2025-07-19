@@ -42,7 +42,7 @@ export const imageShortcode = async (
   let staticData = {};
 
   // TODO: This should be a configuration variable somewhere
-  const cdnPath = 'https://assets.chrism.cloud/chrismcleod.dev/assets/resized';
+  const cdnPath = 'https://assets.chrismcleod.dev/chrismcleod.dev/assets/resized';
 
   formats.forEach(format => {
     staticData[format] = [];
@@ -116,7 +116,7 @@ export const indiewebImageShortCode = async (
 
   let staticData = {};
   // TODO: This should be a configuration variable somewhere
-  const cdnPath = 'https://assets.chrism.cloud/chrismcleod.dev/assets/resized';
+  const cdnPath = 'https://assets.chrismcleod.dev/chrismcleod.dev/assets/resized';
 
   staticData['jpeg'] = [];
   widths.forEach(width => {

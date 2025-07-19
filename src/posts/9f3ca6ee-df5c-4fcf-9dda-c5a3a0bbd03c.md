@@ -1,5 +1,5 @@
 ---
-image: https://assets.chrism.cloud/chrismcleod.dev/assets/da3c1fd0-580e-4da1-9925-4b51ebc24350.JPG
+image: https://assets.chrismcleod.dev/chrismcleod.dev/assets/da3c1fd0-580e-4da1-9925-4b51ebc24350.JPG
 alt: A black-and-white cat is lying on a tan carpet, resting its head on the
   ground. Its eyes are half-closed, and it appears relaxed and comfortable. The
   wall behind it is white, with a dark blue baseboard contrasting with the
