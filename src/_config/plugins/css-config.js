@@ -26,23 +26,21 @@ export const cssConfig = eleventyConfig => {
         return;
       }
 
-      // Process the CSS and write files immediately during compile phase
-      let result = await postcss([
-        postcssImportExtGlob,
-        postcssImport,
-        tailwindcss,
-        autoprefixer,
-        cssnano
-      ]).process(inputContent, {from: inputPath});
-
-      // Write the output to all specified paths synchronously
-      for (const outputPath of paths) {
-        await fs.mkdir(path.dirname(outputPath), {recursive: true});
-        await fs.writeFile(outputPath, result.css);
-      }
-
-      // Return a function that just returns the already-processed CSS
       return async () => {
+        let result = await postcss([
+          postcssImportExtGlob,
+          postcssImport,
+          tailwindcss,
+          autoprefixer,
+          cssnano
+        ]).process(inputContent, {from: inputPath});
+
+        // Write the output to all specified paths
+        for (const outputPath of paths) {
+          await fs.mkdir(path.dirname(outputPath), {recursive: true});
+          await fs.writeFile(outputPath, result.css);
+        }
+
         return result.css;
       };
     }
